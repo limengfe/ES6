@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES7  和promise异步 generator 又关联
+
+        //async 函数返回一个 Promise 对象
+        async function hi(){      //语法   async function name(参数名){函数体}
+            return "你好";
+        }
+        console.log(hi()) //输出类型是promise类型 
+        //也可以使用.then添加回调函数
+        hi().then(v=>{       //等于   hi().then(function(value){ console.log(value)})  
+            console.log(v);
+        })
+
+    </script>
+</body>
+</html>

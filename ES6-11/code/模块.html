@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <img src="../js/m1.js" alt="一直提示路径绝对没问题"> -->
+    <script type="module" scr="../js/m1.js">
+        //引入js文件  不知道为什么就是引入不成功，感觉没为什么问题。
+        import * as test from "../js/test.js";
+        console.log(test);
+        //第二种引入方式 结构赋值形式
+        import {school,fn} from '../js/m1.js'
+        import{name,myName} from "../js/m1.js"
+        import{default as test1} from "../js/test.js"
+        //简便形式
+        // import test1 from "../js/test.js"
+        console.log(test1);
+    </script>
+</body>
+</html>

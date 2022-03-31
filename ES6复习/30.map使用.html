@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    // 
+    //声明方式只有1种，函数式声明，而对象有三种
+    let m = new Map();
+
+    //添加元素 使用set属性     而对象可以用.或者[]
+    m.set('name','李孟飞');
+    m.set('change',function(){console.log('change you')})
+    console.log(m);
+
+    //长度使用自身属性size， 对象使用key
+    console.log(m.size);
+
+    // 删除使用delete
+    m.delete('name');
+
+    //获取使用get  对象使用变量名.属性值
+    console.log(m.get('change'));
+
+
+  </script>
+</body>
+</html>

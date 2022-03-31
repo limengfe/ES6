@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <script>
+        //ES6引入rest参数，用于获取函数的实参，用来代替 arguments
+       //获取实参方式
+       //arguments写法
+       function func1(a, b, c) {
+      console.log(arguments[0]);
+          // expected output: 1
+
+       console.log(arguments[1]);
+       // expected output: 2
+
+       console.log(arguments[2]);
+       // expected output: 3
+                                }
+
+                    func1(1, 2, 3);
+
+         //rest写法  ...args
+         function date(...args){
+             console.log(args);
+         }     
+          date("飞飞","牛牛");  
+         //rest 必须放到参数最后 例function f（a,b,...args）否则出错
+          
+    </script>
+</body>
+</html>

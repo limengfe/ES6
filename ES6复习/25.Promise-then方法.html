@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //创建promise对象
+         const p = new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    resolve("用户数据");
+                    //reject(("出错啦"))
+                },1000);
+         });
+         //调用promise then方法的返回结果是promise对象，
+         //1.如果回调函数返回值非promise，状态为成功，返回值为对象成功的值
+        const result = p.then(value =>{//只有一个参数，可以省略小括号.  成功执行第一个，失败执行第二个
+             console.log(value);
+             //非promise类型的属性 
+            //  return 1;
+            //2.是promise对象 如果状态成功返回 新promise对象的成功值
+            // return new Promise((resolve,reject)=>{
+                // resolve("ok");
+               // reject("失败")
+            // })
+            //3.还可以抛出
+            throw '出错啦！'
+               
+         }, reason=>{
+             console.warn(reason);
+         })
+         console.log(result); 
+        //  链式调用p
+        p.then(value=>{
+
+        }).then((value)=>{
+
+        })
+    </script>
+</body>
+</html>

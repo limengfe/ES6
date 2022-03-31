@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //类表达式可以匿名或者命名
+        //类定义
+        //匿名类
+        let example = class {
+            constructor(a){
+                this.a=a;
+            }
+        }
+        //命名类
+        let example1 =class example1{
+            constructor(a) {
+              this.a = a
+            }
+        }
+
+        //类声明 注意不可以重复声明 不可以提升 不需要加function 方法间不能加分号
+        class example2{
+            constructor(a){
+                this.a = a;
+            }
+        }
+        // class example1{ } 报错 重复声明
+         //然后重点应该是封装继承多态 getter extends setter
+         //学不下去了  不在状态
+          
+    </script>
+</body>
+</html>

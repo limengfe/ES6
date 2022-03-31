@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //方法名可以简写
+         const person = {
+               sayHi:function(){  //此行等价于 sayHi(){
+                   console.log("Hi")
+               }
+         }
+         //调用
+         person.sayHi();
+         //如果时Generator函数 则要在其前面加 *
+         //正常写法 
+             const obj ={
+              name:function *(){
+                  yield '我是飞飞';
+              }
+          }
+          //ES6简写
+            //   const obj={
+            //   *name(){
+            //   yield '我是飞飞'
+            //       }
+            //  }
+          console.log(obj.name);
+        //   ES6允许用表达式作为属性名，但是一定要将表达式放在方括号内。
+        //  属性的简洁表示法和属性名表达式不能同时使用，否则会报错.
+         const ob={
+             ["he"+"llo"](){
+                 console.log("hello");
+             }
+         }
+         console.log(ob.hello);
+
+        //  对象的拓展运算符...
+        //(...)拷贝,克隆
+         let fruit={
+             name:"西瓜",
+             date:10
+         }
+         let gua={...fruit};
+         console.log(gua);
+         //合并{...ob1,...bo2}
+         let name ={name:"飞飞"};
+         let age= {age:18};
+         let handsome={...name,...age};
+         console.log(handsome);
+         //关于拓展运算符和自定义属性相同情况  后面会覆盖前面
+         let a = { name:"A",age:18};
+         let b ={...a,name:"B",age:19}  //最后结果是 b.name= B,b.age=19;
+         //如果 let b={name:"B",age:19,...a}  //最后结果 b.name= A,b.age=18
+
+        //对象的新方法 Object.assign(target,source1,source2.....)
+         let target1={a:1};
+         let source1={b:2};
+         let source2={c:3};
+         Object.assign(target1,source1,source2);
+         console.log(target1);//写目标一对象名
+         //Object.is(value1,value2)比较二哥值是否严格想等 与===相识
+         console.log(Object.is("q","q"));//true
+         console.log(Object.is([1],[1]));//false  二个数组名字起码不同吧
+         console.log(Object.is({q:1},{q:1}))//false 二个对象名字起码不同吧
+         //与===区别
+         //1. +0不等于-0
+           console.log(Object.is(-0,+0));//false
+        //2.NaN等于本身
+          console.log(Object.is(NaN,NaN));//true
+          NaN===NaN; //false
+    </script>
+</body>
+</html>

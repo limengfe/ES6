@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //声明常量
+        const SCHOOL= '尚硅谷'; //不会报错，没有问题的。
+        //1.一定要赋初值
+        // const A; 报错，没有赋初始值。
+        //2.一般变量名是用大写（潜规则）
+        const a = 3.14; //使用小写也不算错。
+        //3.定义的常量不可以需改
+        const PI = 3.14;
+        //var PI = 3; 此时会报错，不可以修改。
+        //4.也是块内级
+        {
+            const UZI = 250;
+        }
+        //    console.log(UZI);报错UZI未定义。
+        //5.可以修改其对象的值，对象包括-对象-数组-函数也算
+        const EDG = ['viper','meiko','jiejie'];
+        EDG.push=('junjia');//不会报错
+        console.log(EDG);
+        
+
+    </script>
+</body>
+</html>

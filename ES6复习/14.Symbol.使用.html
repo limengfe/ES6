@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    //Symbol表示唯一标识符 主要用来给对象添加方法属性
+    let game = {
+
+    }
+    let methods = {
+      up:Symbol(),
+      down:Symbol()
+    }
+
+    game[methods.up] =function () {
+      console.log('上')
+    }
+    game[methods.down] =function () {
+      console.log('下')
+    }
+    console.log(game);
+    //
+    let youxi ={
+      name:"你猜",
+      [Symbol('say')]:function(){
+        console.log('发言');
+      },
+      [Symbol('sing')]:function(){
+        console.log('唱歌');
+      }
+    }
+    console.log(youxi);
+
+    </script>
+
+  
+</body>
+</html>

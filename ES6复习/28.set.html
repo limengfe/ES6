@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    /*
+    Set集合，类似数组实现了iterator接口，所以可使用拓展运算符和for...of遍历
+    */
+   //size，返回集合长度
+   // add增加元素
+   //delete删除元素
+   //has检测是否拥有 返回值为boolean
+   let s = new Set();
+   let s2 = new Set(['李','刘','飞','丽','李']);
+   
+  //  console.log(s2); //'李','刘','飞','丽' 自动去重
+
+  //  console.log(s2.size);//4
+   
+  //  console.log(s2.add('liFei'));
+
+  //  console.log(s2.delete('李'));
+
+  //  console.log(s2.has('刘'));//true
+
+  //  s2.clear();
+   console.log(s2);
+   //遍历
+   for(let v of s2){
+     console.log(v)
+   }
+  </script>
+</body>
+</html>

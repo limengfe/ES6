@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES6引入了引得声明字符串的方式[``] '' ""
+        //1.声明
+        let str1 = `我也是一个字符串哦！`;
+        console.log(str1,typeof str1);
+        //2.内容中可以直接换行   如果使用单引号或者双引号都出现语法错误
+        let str2 = `<ul><li>飞飞</li>
+                        <li>牛牛</li>           
+                                </ul>`;
+        //3.变量拼接
+         let lover = '热巴';
+         let me = `${lover}我喜欢`; //必须使用${}才可以。
+         console.log(me);                        
+    </script>
+</body>
+</html>

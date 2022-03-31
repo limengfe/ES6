@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.object.is 判断2个数值是否完全相等
+          console.log(Object.is(110,110));
+         //2.object.assign 合并对象
+          let school1 ={
+              name:"郑大",
+              address:"郑州",
+              Emall:'3306'
+          } 
+          let school2 = {
+              name:"郑州大学",
+              address:['郑州','河南'],
+              tel:11
+          }
+          console.log(Object.assign(school2,school1));//谁在后面会覆盖前面的相同属性 会显示郑大-郑州
+          //3.object.setPrototypeOf 设置原型对象 object.getPrototypeOf 获取原型对象
+          const school ={
+              name:'北大',
+          }
+          const cities= {
+              xiaoqu:['北京','上海'],
+          }
+          Object.getPrototypeOf(school,cities); //设置
+          console.log(Object.setPrototypeOf(school,cities)) ;
+          console.log(school);
+
+
+            
+    </script>
+   
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        //关于应用有种
+        //第一种，合并数组。
+        const men=['飞飞','牛牛'];
+        const women = ['妞妞','花花'];
+        const people = [...men,...women];
+        console.log(people);
+        //第二种，数组的克隆
+        const F4 = ['飞飞','牛牛','萌萌','腾腾'];
+        const DMao = [...F4];
+        console.log(DMao);
+        //第三种，将为数组转化为真正的数组  合并3个div成一个数组
+        const divs = document.querySelectorAll("div") //找到div所有元素赋值给divs
+        const divArr = [...divs];                   //将3个div赋值给divArr。 合并数组
+        console.log(divArr);
+    </script>
+</body>
+</html>

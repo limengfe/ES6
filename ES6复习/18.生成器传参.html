@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    function *gen (arg){
+      //第一次执行开始
+      console.log(arg);
+      let one = yield '1'  //结束
+      //第二次开始
+      console.log(one)
+      let two =yield '2' //结束
+      //第三次开始
+      console.log(two)
+      let three =yield '3' //结束
+      //第四次
+      console.log(three)
+    }
+
+    let iterator = gen('AAA');
+    console.log(iterator.next());//AAA       Object done: false value: "1"
+    console.log(iterator.next('BBB'));//BBB  Object done: false value: "2"
+    console.log(iterator.next('CCC'));//CCC  Object done: false value: "3"
+    console.log(iterator.next('DDD'))//DDD   Object done: true value: "undefined"
+  </script>
+</body>
+</html>

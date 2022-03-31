@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="ad"></div>
+    <script>
+        let ad = document.getElementById("ad");//找到元素ad 赋值给变量ad
+        ad.addEventListener("click",function() {//给ad添加一个函数 类型为点击事件
+            let _this = this;                  //把this也就是指向ad赋值给_this
+            setTimeout(() => {                  //定时器
+                _this.style.background="pink";  //执行语句
+            }, 2000);
+        })
+         const arr = [1,2,6,10,11]
+
+        // 正常写法   const result = arr.filter(function (item) {
+        //        if(item % 2 === 0){
+        //            return true;
+        //        }else{
+        //            return false;
+        //        }
+        //       })
+        //箭头函数写法
+                const result = arr.filter(item => item%2===0);
+                      console.log(result);
+              //箭头函数适用于与this无关的回调，定时器，数组的方法回调。
+              //不适用 与this有关的回调，事件回调，对象的方法。 只是不适用，不是不可用
+              {
+                  name:"尚硅谷",
+                 //出问题 getName:()=>{
+                      this.name;
+                  }
+              
+    </script>
+</body>
+</html>

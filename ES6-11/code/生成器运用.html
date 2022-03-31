@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //异步文件 文件操作 网络操作 数据库操作
+        //1s后输出1，2s后输出2，3s后输出3.
+
+        //定时器方法
+        // console.log(1);
+        // setTimeout(()=>{
+            // setTimeout(()=>{
+                //  console.log(2);
+                //  setTimeout(() => {
+                    //  console.log(3)
+                //  }, 3000);
+            // },2000)
+        // },1000)
+
+        //生成器方法
+        function one(){
+            setTimeout(() => {
+                console.log(1)
+                iterator.next();
+            }, 1000);
+        }
+        function two(){
+            setTimeout(() => {
+                console.log(2)
+                iterator.next();
+            }, 2000);
+        }
+        function three(){
+            setTimeout(() => {
+            console.log(3)
+            iterator.next();
+        }, 3000);
+        }
+        //把三个计数器创建成一个生成器
+        function * gen(){
+            yield one();
+            yield two();
+            yield three()
+        }
+        //调用生成器
+        let iterator = gen();
+           iterator.next();
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         const banji = {
+             name:"NB",
+             sts:["飞飞",'牛牛','腾腾'],
+             [Symbol.iterator](){
+                  let index = 0;
+                  let _this = this;                                               //工作原理
+                  return {                                                        //1创建一个指针，指向其实位置
+                      next:function() {                                           //2第一次调用对象的next方法，指针自动指向
+                          if(index < _this.sts.length){                           //3不断调用next，直至最后一个
+                              const result ={ value:_this.sts[index],done:false}  //4每次调用返回一个value和done
+                              index++;
+                              return result;
+                          }else{
+                            return{value:undefined,done:true}  
+                          }
+                      }
+                  }
+              }
+              } 
+              //遍历对象
+              for(let v of banji){
+                  console.log(v);
+              }
+</script>
+    
+</body>
+</html>

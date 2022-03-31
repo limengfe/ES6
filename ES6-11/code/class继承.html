@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES5继承
+        //定义手机函数
+         function phone(brand,price){
+             this.brand = brand;
+             this.price = price; 
+         }
+         //添加方法
+         phone.prototype.call = function(){
+             console.log("我是手机");
+         }
+
+         //智能手机
+         function smartPhone(brand,price,color,size){
+             phone.call(this,brand,price);// 继承phone的二个参数
+             this.color = color;
+             this.size = size;
+         }
+         //设置子级构造函数原型
+          smartPhone.prototype = new phone;
+          smartPhone.prototype.constructor = smartPhone;
+
+          //声明子类的方法  声明了二个子方法 拍照和打游戏
+           smartPhone.prototype.photo = function(){
+                console.log("我可以拍照")
+           }
+           smartPhone.prototype.playGame = function(){
+               console.log("我可以打游戏");
+           }
+           const apple = new smartPhone("apple",5999,'pink','5.5inch');
+                console.log(apple);
+    </script>
+</body>
+</html>

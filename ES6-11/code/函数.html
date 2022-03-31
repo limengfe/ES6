@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数</title>
+</head>
+<body>
+    <script>
+     //默认参数
+      function fn(name,age=18){
+          console.log(name+","+age);
+      }
+      fn("amy",'17');
+      fn('amy','');// null也是传值  以及空          amy,
+      fn('amy'); //未给参数传值是，会使用默认参数值  amy,18
+
+      //暂时性死区
+      function f(x,y=x){
+          console.log(x,y);//暂时性死区
+      }
+       f(1);//参数初始化值 所以不报错  1，1
+      //    f();//报错 因为参数x未初始化，不能作为y的默认值   y=x；
+       
+      //不定参数 -就是不确定参数的个数 用...表示相当于省略呗 铭记啊有参数名的一定要放在最后 并且有且只有一个带参数名
+      function a(...values){
+            console.log(values.length);
+      }
+      a(1,2);    //2
+      a(1,2,3,4);//4
+
+
+      //箭头函数  参数=>函数体
+       //var b=v=>v;
+       //等价于
+       var f = function(v){
+       return v;
+       }
+        console.log(f(1));  
+      
+      //当箭头函数没有或者有多个参数时候需要用括号 括起来。 只有一个参数可省略括号
+       var aa = (a,b)=>a+b;
+          console.log(aa(2,2));
+      
+      //当箭头函数有多个语句时候需要用大括号括起来，只有一个语句可以省略{}，直接返回语句
+       var aaa=(a,b)=>{
+           let result = a*b;
+           return result;
+       } 
+       console.log(aaa(2,2));
+
+       //当箭头函数要返回对象的时候，需要用()区分代码块
+       //不加()代码区自动出错
+       var b=(id,name)=>({id:id,name:name});
+       console.log(b(06,'飞'));
+
+       //注意  箭头函数 没有this，super,arguments,new.target也就是不可以使用new命令
+       //this此时指外层 即window 其他的使用会报错  
+       
+       //适合this的场景
+       //回调函数
+       var person={
+           'age':18,
+           'sayHi':function(){
+               setTimeout(function(){
+                   console.log(this.age)
+               })
+           }
+      }
+        var age=20;
+        person.sayHi();//20 懵逼吗 我也是 
+       //接下来好好看吧
+       var person1 ={
+             age:18,
+             sayHi(){
+                 setTimeout(() => {
+                     console.log(this.age);
+                 });
+             }
+       }
+       var age =21;
+       person1.sayHi()//18 没有什么问题 耶耶   
+    
+     //不适合场景  反正我是晕了
+     var Person2 = {
+    'age': 18,
+    'sayHello': ()=>{
+        console.log(this.age);
+      }
+};
+var age = 20;
+Person2.sayHello();  // 20
+// 此时 this 指向的是全局对象
+ 
+var Person3 = {
+    'age': 18,
+    'sayHello': function () {
+        console.log(this.age);
+    }
+};
+var age = 20;
+Person3.sayHello();   // 18
+// 此时的 this 指向 Person1 对象      
+ 
+       
+
+    </script>
+</body>
+</html>

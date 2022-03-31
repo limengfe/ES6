@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // promise表示异步操作最终完成还是失败及其结果值。
+        //实例化promise对象 -新构造一个函数
+        const p = new Promise(function (resolve,reject) {
+           setTimeout(function () {
+                let date = "数据库中的用户数据";
+                resolve(date);
+             },1000)
+          }) 
+          //调用promise对象的 then方法
+          p.then(function (value) {
+              console.log(value); //正确时候输出
+            },function(reason){
+              console.error(reason);//错误时候输出
+          })
+    </script>
+</body>
+</html>

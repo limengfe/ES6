@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //如果解构赋值了，优先取架构赋值(右边)，然后是默认值(左边)
+        // 数组模型结构赋值
+        //基本
+        let[a,b,c]=[1,2,3]; //a=1,b=2,c=3
+        //嵌套
+        let[x,[y,z]]=[1,[2,3]]; //x=1,y=2,z=3
+        //忽略
+        let[e,,f]=[1,2,3];    //e=1,f=3
+        //不完全
+        let[j=1,k]=[];    //j=1 k=undefined
+        //剩余
+        let[p,...q]=[1,2,3] // p=1,q=[2,3]
+        //字符串
+        let[r,s,t,u,v]=['hello']; //r='h',s='e',t='l',u='l',v='o'
+        //结构默认值
+        let [o=2]=[undefined] //o=2
+
+        //对象模型的结构赋值
+        //基本
+        let{foo,bar}={foo:"aaa",bar:"bbb"} //foo='aaa',bar='bbb'
+        //可嵌套可忽略
+        let obj={p:['hello',{y:'world'}]};
+        let {p:[x,{y}]}=obj;   //x='hello y='world'
+        let obj1={p:['hello',{y:'world'}]};
+        let {p:[x,{}]}=obj1;  //x='hello'
+        //不完全
+        let obj2={p:[{y:'world'}]}
+        let {p:[{y}],x}=obj2; //x=undefined,y='world'
+        //剩余
+        let{m,n,...rest}={m:10,n:20,h:30,i:40} //m=10,n=20,rest={h:30,i:40}
+        //结构默认值
+        let{l=1,r=1}={l:3}  //l=3, r=1
+        let{ a:aa=10,b:bb=20}={a:20} //a=20 b=20
+    </script>
+</body>
+</html>

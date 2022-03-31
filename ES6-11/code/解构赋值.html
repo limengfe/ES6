@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.数组的结构赋值
+        const CLASS = ['李孟飞','牛庆庆','萌萌','腾腾']
+         var  [li,niu,meng,teng] = CLASS;
+         console.log(li);
+         console.log(niu);
+         console.log(meng);
+         console.log(teng);
+         //2.对象的结构赋值
+         const ADIO = {
+             name:"李孟飞",
+             age:18,
+             can:function(){
+                 console.log("everything");
+             }
+         }
+        // let {name,age,can}=ADIO;
+        //    写法一：
+        //   console.log(name);
+        //  console.log(age);
+        // console.log(can);
+        //写法二：
+        let {ok} = ADIO;
+         ok();//声明的名字是对象里的函数名，不然无法调用对象里的函数，把ok改成can即可。
+    </script>
+</body>
+</html>

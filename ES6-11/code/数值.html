@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let a=0b11; //二进制表示
+    let b=0o11; //八进制表示
+    console.log(a);
+    console.log(b);
+    //Number.EPSILON 最小误差值  2的负52次法
+    console.log((0.1+0.2)===0.3)//false
+    equal = (Math.abs(0.1-0.3+0.2)<Number.EPSILON);
+    console.log(equal);//true
+    //Number.finite()检查数值是否有限
+    //NaN false  
+    //非数值 false
+     console.log(Number.isFinite(1));
+     //Number.parseInt()转化为指定进制的整数  默认为十进制数值
+     console.log(Number.parseInt(11.2));
+     console.log(Number.parseInt(1001,2)) //可以指定
+     //Number.isInteger()判断是否为整数
+     console.log(Number.isInteger(1));//true
+     console.log(Number.isInteger(5E-324)); // false
+     console.log(Number.isInteger(5E-325)); // true
+
+     //关于Math的扩展
+    //Math.cbrt 计算立方根
+     console.log(Math.cbrt(64));//4
+     //.imul 返回相乘结果
+     console.log(Math.imul(2,3))//6
+     //.hypot平方和的根
+     console.log(Math.hypot(3,4))//5
+     //.trunc 返回其整数部分
+     console.log(Math.trunc(11.11))//11
+     //Math.sign 数值为正返回1，为负返回-1，0返回0
+     console.log(Math.sign(10));
+     console.log(Math.sign(0));
+     console.log(Math.sign(-10));
+    //  Math.sinh(x): 用于计算双曲正弦。
+// Math.cosh(x): 用于计算双曲余弦。
+// Math.tanh(x): 用于计算双曲正切。
+// Math.asinh(x): 用于计算反双曲正弦。
+// Math.acosh(x): 用于计算反双曲余弦。
+// Math.atanh(x): 用于计算反双曲正切。
+       
+    </script>
+</body>
+</html>

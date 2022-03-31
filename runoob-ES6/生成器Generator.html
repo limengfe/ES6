@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //生成器 -我的理解是首先构造一个函数 ，-然后实例化 -再调用
+        //function后面加一个*号  函数内部使用yield表达式
+        // * 用来表示函数为 Generator 函数，yield 用来定义函数内部的状态。
+          function *fn(){
+              console.log("one");
+              yield '1';
+              console.log('two');
+              yield '2';
+              console.log('three');
+              yield '3';
+          }
+          //   fn();//不会立即执行 需要使用next()方法调用 相当于设置一个头部指针 依次调用，依次执行
+            const gen =  fn(); 
+            console.log(gen.next());//执行第一条语句
+            console.log(gen.next());//第二条
+            console.log(gen.next());//最后一条
+          //或者也可以用遍历来调用 结果会有点小差别 还好吧
+           for(let v of fn()){
+               console.log(v);
+           }  
+
+           //关于生成器传参
+            function * f(a){
+              console.log(a);
+              let one= yield 111;
+              console.log(one);
+              let two = yield 222;
+              console.log(two);
+            }
+            //执行迭代器对象
+            let a=f('A')  //第一次传参
+             console.log(a.next());
+             console.log(a.next('B')); //第二次传参
+             console.log(a.next('C')); //第三次传参
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let a = Symbol('hello');
+         console.log(a);
+         console.log(typeof a);
+         let a1=Symbol('hello');
+         console.log(a===a1);//false 标识不可能相同
+         
+         //Symbol.for()如果有则返回，若没有则创建
+           let x=Symbol.for('ok');
+           let y=Symbol.for('ok');
+           console.log(x===y);//true 
+        //Symbol.keyFor() 返回已经登记的key'值
+         let color =Symbol.for("red");
+            Symbol.keyFor(color);
+            console.log(color); //red
+    </script>
+</body>
+</html>

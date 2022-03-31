@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    //rest用来获取实参，ES6中只针对数组，ES9对对象提供了一样的拓展和扩展运算符的使用
+   function connect({name,age,...like}){
+   console.log(name);
+   console.log(age);
+   console.log(like);
+   }
+   connect({
+     name:'li',
+     age:18,
+     eat:'food',
+     look:'beauty'
+   })
+
+   //...拓展  快速合并对象
+   const q = {
+      q:"旋风斩"
+   }
+   const w = {
+     w:'回血'
+   }
+   const e = {
+     e:'加攻击力'
+   }
+   const r = {
+     r:'属性全开'
+   }
+   const js = {...q,...w,...e,...r};
+   console.log(js);
+
+
+  </script>
+</body>
+</html>

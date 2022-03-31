@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //创建父类
+          class phone{
+              //添加参数 必须使用con....
+            constructor(brand,price){
+                this.band = brand;
+                this.price = price;
+            }
+            //父类的成员属性， 使用call（）
+            call(){
+                 console.log('我是手机');
+            }
+          }
+          //写子类
+            class smartPhone extends phone{
+                //构造方法
+                constructor(brand,price,color,size){
+                    super(brand,price);//继承父类
+                    this.color = color;
+                    this.size = size;
+                }
+              photo(){
+                  console.log("我是相机");
+              }
+              playGame(){
+                  console.log("打游戏");
+              }
+              //子类可以重新重写父类 -在子类中写一个和父类一样的属性  call() 父类的属性
+                call(){
+                    console.log("我可以视频通话");
+                }
+               
+            }
+            //调用
+            const apple = new smartPhone('apple','5899','black','5.5yinnch')
+                // console.log(apple);
+                apple.call();
+                apple.photo();
+                apple.playGame();
+
+
+          
+    </script>
+</body>
+</html>

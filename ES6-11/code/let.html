@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 关于let -->
+    <script>
+        // 声明变量
+          let a;
+          let b,c,d;
+          let e=200;
+          let f=500,h=[],g='iloveyou';//都没什么问题。、
+          // 1.变量不可以重复声明
+          let star="罗志祥";
+        //   let star="小猪"//此时命令窗口会报错。
+          //2.块级作用域 全局，函数eval
+          // if else for
+          {
+              let girl="周扬青";
+              console.log(girl);//块内可以用。
+          }
+        //   console.log(girl); //此时窗口会报错，块内可以使用，块外不可以用。
+        //3.不存在变量提升
+        //    console.log(song);
+        //    let song="恋爱达人";//不可以先使用再声明。
+        //4.不影响作用域链
+        {
+            let school = '尚硅谷';
+            function fn(){
+                console.log(school);
+            } 
+            fn(); //可以正常调用使用。
+        }   
+    </script>
+</body>
+</html>

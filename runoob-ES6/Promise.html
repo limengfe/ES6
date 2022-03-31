@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //异步操作   三种状态 1.pending进行中 2.fulfilled已成功 3.rejected已失败 
+        //处于fulfilled和rejected就是resolved 已定型
+        const p1 = new Promise(function(resolve,rejected){   
+            resolve('success1');  //执行成功1
+            resolve('success2');  //执行成功2  只有第一个成功执行的参数才有效 所以结果不会是success2
+        });
+        const p2 = new Promise(function(resolve,rejected){
+            resolve('success3'); //执行成功3
+            reject('reject');    //执行失败
+        })
+        p1.then(function(value){  //回调函数
+            console.log(value);   // success1
+        })
+        p2.then(function (value){//回调函数
+            console.log(value);   // success3
+          })
+
+        //.then接收二个函数作为参数 第一个是成功执行的回调，第二个是失败执行的对调， 二个函数只有一个会被调用，-当然了 还能操作成功又失败啊
+         const p3= new Promise(function(resolve,reject){
+             resolve("成功");
+         })
+         p3.then(function(value){   //这个参数值是用来接收  是成功还是失败的值
+             console.log(value);
+         })
+         //then方法的特点  -在 JavaScript 事件队列的当前运行完成之前，回调函数永远不会被调用。
+
+
+         //通过.then形式添加的回调函数，无论什么时候，都会被调用。
+         //可以添加多个回调函数 按照顺序执行。
+         const p = new Promise(function(resolve,reject){
+             resolve(1);
+        }).then(function(value){ // 第一个then // 1
+            console.log(value);
+            return value * 2;
+        }).then(function(value){ // 第二个then // 2
+           console.log(value);
+       }).then(function(value){ // 第三个then // undefined
+          console.log(value);
+          return Promise.resolve('resolve'); 
+       }).then(function(value){ // 第四个then // resolve
+  console.log(value);
+  return Promise.reject('reject'); 
+}).then(function(value){ // 第五个then //reject:reject
+          console.log('resolve:' + value);
+       }, function(err) {
+          console.log('reject:' + err);
+       });
+
+    </script>
+</body>
+</html>

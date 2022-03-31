@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    //JS有一个最大安全值 9007199254740991 
+    let max = Number.MAX_SAFE_INTEGER;
+    console.log(max);
+
+    //如果再往上运算就会不准备
+    //所以引入bigInt
+    console.log(BigInt(max)+BigInt(10));//9007199254741001n
+  </script>
+</body>
+</html>

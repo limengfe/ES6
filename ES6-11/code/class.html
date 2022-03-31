@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //传统构造函数
+        function phone (brand,price){
+            this.brand = brand;
+            this.price = price;
+        }
+        //添加方法  谁调用 谁使用
+        phone.prototype.call = function() {
+            console.log("我是手机");
+        }
+        //实例化对象
+        let OPPO = new phone("oppo",2999);
+          OPPO.call();
+          console.log(OPPO);
+          //新的构造方法
+           class shouji{
+               //构造方法，con....名字不可以修改
+               constructor(pp,jj){
+                   this.pp = pp;
+                   this.jj = jj;
+               }
+               //方法必须如此写，不使用上面的语句
+               call(){
+                   console.log("我是class写的手机");
+               }
+           }
+           //调用
+         let vivo = new shouji("vivo",1999);
+             
+                console.log(vivo);
+
+    </script>
+</body>
+</html>

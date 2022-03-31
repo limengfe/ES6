@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+       //字符串识别方法 ，字符串可以拆。
+         //includes() 判断是否找到
+         //startWIthaca() 是否在头部
+         //endsWith()是否在尾部
+        let str = "hello,kuGou,zhuTou";
+        console.log(str.includes("hello"));
+        console.log(str.startsWith("hello"));
+        console.log(str.endsWith("zhuTou"));
+        console.log(str.startsWith("ku",6));
+ 
+        //可以重复
+        console.log("你好,".repeat(3.2));
+
+        //字符串补全
+        //padStart 从头补
+        //padEnd   从后补
+         console.log("ha".padStart(6,"w")); //6代表长度为6  再在头部补四个w
+         console.log("o".padEnd(3,'k'));    //总长度是3，尾部加k;
+
+         //经典惯你
+         //``
+         let st = "ni`\n`hao";
+         console.log(st);
+         //多行
+         let st1=`你好
+         啊`
+         console.log(st1);
+         //添加变量和表达式  ${变量名}或者${函数名}
+          let i = 666;
+          let age = 250
+          let st2 = `你${i}啊 ,他是个${age}吧`;
+         console.log(st2);
+         
+
+       
+
+    </script>
+</body>
+</html>

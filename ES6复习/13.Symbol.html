@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    //创建Symbol 函数式
+      let s = Symbol();
+        console.log(typeof s)//Symbol
+      let s1 = Symbol('1');
+      let s2 = Symbol('1');
+      console.log(s1 === s2);//false 函数式创建的不相等
+
+    //Symbol.for创建  
+    let s3 = Symbol.for('1');
+      let s4 = Symbol.for('1');
+      console.log(s3 === s4);//true
+
+     
+     //不可以与其他数据运算
+     //定义的对象属性不可以用for...in遍历 ，但是可以使用Reflect.ownKeys来获取键名 
+  </script>
+</body>
+</html>

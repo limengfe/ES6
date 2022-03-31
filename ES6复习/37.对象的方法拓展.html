@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    //1.Object.is 判断2个值是否相等
+    console.log(Object.is(120,120));//TRUE
+    console.log(Object.is(NaN,NaN));//TRUE
+    console.log(NaN === NaN);// FALSE
+    //2.Object.assign 对象的合并
+    const obj1 = {
+      name:"李",
+      age:18,
+      like:'eat'
+    }
+    const obj2 ={
+      name:"飞",
+      age:23,
+      love:"刘"
+    }
+     console.log(Object.assign(obj1,obj2));  //后面相同属性会覆盖，不相同的保留
+
+     //3.Object.setPrototypeOf Object.getPrototypeOf
+     const person ={
+       name:"飞"
+     }
+     const dog = {
+       xm:['旺财','大黄']
+     }
+     //参数2值添加到参数1的原型链上
+
+     Object.getPrototypeOf(person,dog);
+     console.log(Object.setPrototypeOf(person,dog));
+    //  console.log(person)
+  </script>
+</body>
+</html>

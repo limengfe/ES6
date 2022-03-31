@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //墨迹获取信息   用户信息 订单数据 商品数据
+        function getUsers(){
+            setTimeout(() => {
+            let date = "用户信息";//调用的值是 -用户信息
+            iterator.next(date)  //要构成生成器，必须要添加next方法 不然没法调用
+        }, 1000);
+        }
+       function getOrders(){
+           setTimeout(() => {
+            let date = "订单数据";//调用的值是 -订单数据
+            iterator.next(date)//要构成生成器，必须要添加next方法 不然没法调用
+        }, 1000);
+       }
+       function getGoods(){
+            setTimeout(() => {
+            let date = "商品数据";//调用的值是 -商品数据
+            iterator.next(date)//要构成生成器，必须要添加next方法 不然没法调用
+        }, 1000);
+       }
+       
+        //给三个定时构建一个生成器
+         function* gen(){
+             let user =  yield getUsers(); //调用函数1
+               console.log(user)   //打印调用函数1的值
+             let orders =  yield getOrders()//调用函数2
+             console.log(orders)   //打印调用函数2的值
+             let goods =  yield getGoods();//调用函数3
+             console.log(goods)   //打印调用函数3的值
+         }
+         //调用生成器
+           let iterator = gen();
+           iterator.next();
+    </script>
+</body>
+</html> 

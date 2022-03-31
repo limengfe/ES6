@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Map对象保存键值对并记住键的原始插入顺序
+         let map =  new Map();
+         //添加元素
+         map.set("num","666");
+         map.set("obj","person");
+        //添加元素也可以是对象 
+         let key ={
+             school:"HN"
+         };
+         map.set(key,['郑大，河大'])
+        //  console.log(map);
+          //查看长度
+        console.log(map.size);
+          
+         //删除
+        //  map.delete("num");
+        //  console.log(map);
+
+         //获取
+        //  console.log(map.get('num'));
+        //  console.log(map.get(key));
+         //清空
+          map.clear();
+          console.log(map);
+    </script>
+</body>
+</html>

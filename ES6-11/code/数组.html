@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //是不是觉得没什么用，可以想成把输出的结果，以一个数组输出。
+        let a=[1,2,3]; //基本定义
+        //Array.of()将参数中的元素形成数组
+        console.log(Array.of(1,2,3,'A',[true],[],{}));//字符，Boolean，[]{}，都可以
+
+        //Array.from()将类数组对象或可迭代对象转化为数组
+        console.log(Array.from([1,2]));
+        console.log(Array.from([1,,3]));
+
+        //可以使用map函数对元素进行处理  -箭头函数
+        console.log(Array.from([1,2,3],n=>n*2));//大小括号都可以省略
+
+        //类数组对象 相当于控制台输出的那种形式
+         let arr = Array.from({
+             0:'1',            //如果属性名不是数值或可以转化为数值，则返回长度为length，元素为undefined的数组
+             1:'2',
+             2:'3',
+             a:'4',            //直接被忽略  因为属性名无法转化为数值。 undefined
+             length:4 //如果没有length值，则返回一个空数组 -长度为0。
+         })
+         console.log(arr);
+
+         //转化为可迭代对象   
+         //   转化map -就是带有key值的对象。
+         let map = new Map();
+         map.set('key0','value0');
+         map.set('key1','value1');
+         console.log(Array.from(map));
+         //转化set -也是比较好理解吧
+          let arr1=[1,2,3];
+          let set = new Set(arr1);
+          console.log(set);
+        //转化为字符串
+          let arr2 = 'abc';
+          console.log(Array.from(arr2));//a,b,c
+
+
+
+          //拓展 -在array的基础上  数组名.拓展名  记住.
+          //查找
+          //find()查找数组中的元素，并返回第一个
+          let aa=[1,2,3,4];
+          console.log(aa.find(item=>item>2)); //3
+          //findIndex() 查找数组中符合条件的元素索引，若有多个，则返回第一个。  索引即下标
+          let bb=Array.of(1,2,1,3);
+          console.log(bb.findIndex(item=>item==2));// 1   function(item){ return item==2}  省略小括号，大括号，简写 item=>item==2;
+
+          //填充
+          //fill()将一定范围索引的数组元素内容填充为单个指定的值;
+          let aaa=Array.of(1,2,1,3);
+          console.log(aaa.fill(0,1,3)); //在这里有三个值， 第一个：添加的值。 第二个：从第一个下标开始填充。 第三个：结束的位置  1,0,0,3
+
+          //copyWithin() 别说的那么高大上  就是复制索引罢了
+           console.log([1,2,3,4].copyWithin(0,2,4));//3,4,3,4 
+           //0  从索引为0开始修改。 即1
+           //2  从下标为2为修改的值 即3
+           //4  修改结尾的值  即4     意思就是从头修改，改成3开始，4结束，所以是3，4，3，4
+           
+           //遍历
+           //entries()遍历键值对    可以同时遍历
+           for(let [key,value]of ['a','b'].entries()){
+               console.log([key,value]);
+           }
+
+           //keys()遍历键名         也可以值遍历键名
+           for(let key of['a','b'].keys()){
+               console.log(key);
+           }
+
+           //values遍历键值        或者只遍历键值
+           for(let value of['a','b'].values()){
+               console.log(value);
+           }
+
+           //includes() 数组是否包含指定值  Set的has用于查找值，Map的has用于查找建名
+           console.log([1,2,3].includes(1))//可以输入二个参数值  第一个代表-查找的值，第二个代表搜索的起始索引
+           console.log([4,5,6].includes(4,1));//NaN也可以查找
+
+           //flat() 关于数组的嵌套
+            console.log([1,[2,3]].flat()); //直接转化为一维数组
+            console.log([1, [2, [3, [4, 5]]]].flat(2));//可以指定转化为几维的
+            console.log([1, [2, [3, [4, 5]]]].flat(Infinity));//不管如何嵌套全部给老子转化为一维
+            //而且这个直接跳过空格
+            console.log([1,,2,,].flat());// [1,2]
+
+            //flatMap()是u是又觉得没甚么卵用啊  其实可以把一个嵌套整成一维，然后进行其他操作啊
+            console.log([1,2,3].flatMap(item=>item*2));
+
+
+            //拓展运算符
+             //复制一个数组
+             let q=[1,2,3];
+             console.log(...[q]);
+             //合并
+             let p=[6,66,666];
+             let p2 = [9,99,999];
+             console.log([...p,...p2]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+  
+    const cp = {
+      name:"李刘",
+      person:['飞飞','丽丽']
+    }
+    //获取所有的键 
+    console.log(Object.keys(cp));          //    返回值是数组
+    // Object.values() 获取对象所有的值
+    console.log(Object.values(cp));        //    返回值是数组
+    // Object.entries()
+    console.log(Object.entries(cp));       //    返回值是数组
+    //数组可以进行Map
+    const m =new Set(Object.entries(cp))
+    console.log(m);
+    // console.log(m.get('name'));
+    
+    // Object.getOwnPropertyDescriptors()
+    console.log(Object.getOwnPropertyDescriptors(cp));
+    //返回值是对象 而且还有对对象的描述 writable: true, enumerable: true, configurable: true
+    const obj = Object.create(null,{
+      name:{
+        value:'对象',
+        //属性特征
+        writable:true, //是否可写
+        configurable:true,//是否可删除
+        enumerable:true  //是否可枚举
+      }
+    })
+  </script>
+</body>
+</html>

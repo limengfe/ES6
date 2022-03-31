@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // get 和 set
+        //get -语法将一个对象属性绑定到一个函数，该函数将在查找该属性时被调用.
+        //set -语法将对象属性绑定到试图设置该属性时要调用的函数。
+          class phone{
+              //绑定  调用时显示 -价格属性被修改了
+              get price(){
+                  console.log("原来价格");
+                  return 999;  返回值
+              }
+              //设置  设置属性时显示 -价格属性被修改了
+              set price(val){  //必须要声明一个实参来接受值
+                console.log("价格属性被修改了");
+              }
+          }
+          //实例化对象
+           let s = new phone();
+           console.log(s.price);  //查找属性
+           s.price = "free";      //设置属性
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+
+<script>
+    // 1.数组的合并
+    let arr1 = ['li'];
+    let arr2 = ['liu'];
+    console.log([...arr1,...arr2]);
+    //2.数组的克隆
+    let arr3 = ['李','刘'];
+    let arr4 = [...arr3];
+    console.log(arr4);
+    // 3.将为数组转化为真正的数组
+      const divs = document.getElementsByTagName('div');
+      const divArr = [...divs];
+      console.log(divArr);
+  </script>
+</body>
+</html>

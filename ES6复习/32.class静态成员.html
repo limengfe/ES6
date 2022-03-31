@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function phone(){
+
+    }
+    phone.name= '手机';           //函数属性 不是实例化属性  所以21结果为undefined
+    phone.change = function(){
+      console.log('我可以改变')
+    }
+    phone.prototype.price = 1999; //添加到原型，实例化可以取值到  
+
+    //实例化对象
+    let apple = new phone();
+    console.log(apple.name);//undefined
+    console.log(apple.price);//1999 
+
+    class sj{
+      static name = '手机';
+      static change =function(){
+        console.log('改变世界')
+      }
+    }
+
+    let xm = new sj();
+    console.log(xm.name);//undefined
+    console.log(sj.name);//手机
+
+  </script>
+</body>
+</html>

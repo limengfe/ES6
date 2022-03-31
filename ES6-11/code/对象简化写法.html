@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6允许在大括号里面，直接写入变量和函数，作为对象的属性和方法。
+        //这样写更简洁哦。
+        let name = '李孟飞';
+        let change = function(){
+            console.log('你的男神');
+        }
+        const love = {
+             name,    //直接写变量
+             change,  //直接写函数
+             import(){    //输入一个函数
+                 console.log('真的是超级无敌大帅逼');
+             }
+        }
+        console.log(love);
+    </script>
+</body>
+</html>

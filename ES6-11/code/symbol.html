@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          //创建Symbol  
+          let s = Symbol();
+          console.log(s,typeof s);
+          let s1 = Symbol("李孟飞");//可以添加字符串描述
+          let s2 = Symbol("李孟飞");
+          console.log(s1===s2);//不相同，每次创建都是一种新的符号。
+          //Symbol.for创建，如果已经有了，就找到并返回，如果没有就创建
+          let s3 = Symbol.for("飞飞");
+          let s4 = Symbol.for("飞飞");
+          console.log(s3===s4);// 因为第二次创建已经有了飞飞的符号，说一返回飞飞，因此二个值相同。
+
+          //关于数据7种类型  记住了   
+        //    你很牛逼
+        //    you are so niubility  => USONB
+        //    U  undefined
+       //     S   string Symbol
+       //     O object
+       //     N null number
+       //     B boolean 
+
+          
+
+
+    </script>
+</body>
+</html>

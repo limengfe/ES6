@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    class phone{
+      constructor(brand,price){
+        this.brand = brand
+        this.price = price
+      }
+      call(){
+        console.log('我是手机')
+      }
+    }
+    class zn extends phone {
+    constructor(brand,price,color){
+        super(brand,price);
+        this.color = color;
+    }
+    game(){
+      console.log('打游戏')
+    }
+    sing(){
+     console.log('唱歌')
+    }   
+    // 子类不可以调用父类相同的方法
+    call(){
+      console.log('视频通话')  
+    }
+   }
+   let xm = new zn('小米',1999,'白色');
+   console.log(xm);
+   xm.game();
+   xm.sing();
+   xm.call();//此时是视频通话，而不是打电话，优先调用子类
+  </script>
+</body>
+</html>

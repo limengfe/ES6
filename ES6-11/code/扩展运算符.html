@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //扩展运算符可以将[数组]转化为逗号分隔的参数序列 不懂往下看
+        //声明一个数组
+        let tfboys = ['易烊千玺','王俊凯','王源'] // 
+           function TF(){
+               console.log(arguments);//引入外部元素
+           }
+        //    TF(tfboys);//结果是输出1个元素，有3个值 Y,W,W。
+          TF(...tfboys);//结果是输出了个元素把数组的参数全部分别输出
+    </script>
+</body>
+</html>

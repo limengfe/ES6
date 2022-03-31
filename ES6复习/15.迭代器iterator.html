@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    //迭代器是一种接口，为不同的数据结构提供统一的访问机制
+    //供for...of使用
+
+    //定义一个数组
+    let arr = ['李','刘'];
+
+    //遍历
+    for(let value of arr){
+      console.log(value); //李 刘
+    }
+
+    //工作原理
+    // 创建一个指针对象
+    // 第一次调用，使用next方法，指针自动指向数据结构的第一个成员
+    // 接下来不断调用next方法，直至最后一个成员
+    // 每次调用都会返回value和done属性     done代表是否调用完的状态
+
+
+  </script>
+</body>
+</html>

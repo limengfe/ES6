@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //关于let
+
+        //1.只在代码块内有效
+        //{
+            // let a =1;
+        // }
+        // document.write(a);错误
+        //2.不可以重复声明
+        //   let a=1;
+        //   let a=2; 此时报错 
+        //3.适合for循环
+        for(let i=0;i<10;i++){
+            setTimeout(function(){
+                document.write(i);
+            })
+        }
+        //4.不存在变量提升
+        // document.write(b);
+        // let b=2;//报错
+
+        //const  声明名称最好都是大写（潜规则）
+        //1.一旦定义无法修改
+        //   const PI =3.14;
+        //   let PI=521;//报错
+        //2.必须初始化
+          const AI;//报错
+    </script>
+</body>
+</html>

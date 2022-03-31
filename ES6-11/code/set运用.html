@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5,6,6,6,2,2];
+        // 数组去重
+        // let result = [new Set(arr)];   //转化为set集合，添加数组扩展符。
+        // console.log(result);
+
+        // 数组交集
+        let arr2 = [5,6,5,6,100];
+        //   let result = [...new Set(arr)].filter(item=>{ //在数组1里添加过滤器 ，过滤元素item
+            //   let s2= new Set(arr2); //5,6              //s2整成一个集合
+            //    return s2.has(item);                     //返回 s2集合里已经拥有的元素item 即-集合1的元素。
+        //   })
+        //    console.log(result);
+        // 数组并集
+        // let union = [...arr,...arr2] // arr1 和arr2 合并
+        //  let result = [new Set(union)];
+        //  console.log(result);
+
+        // 数组差集  和并集相反 主体不同值也不一样
+        //取arr在arr2没有的元素                      在集合arr里过滤 arr2集合已经有的元素  加！ 取反  取没有的
+          let diff = [...new Set(arr)].filter(item=> !(new Set(arr2).has(item)));
+          console.log(diff);
+    </script>
+</body>
+</html>

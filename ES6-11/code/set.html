@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // set 集合里 存储唯一值
+        //创建
+         let s = new Set();
+        //  console.log(s,typeof s); 数据类型是object
+        let s2 = new Set(['飞飞','牛牛','萌萌','飞飞']);//重复值不显示
+            console.log(s2);
+        //元素个数
+        // console.log(s2.size);
+        //添加元素
+        s2.add('腾腾');
+        console.log(s2);
+        //元素删除
+        s2.delete("萌萌");
+        console.log(s2);
+        //清空元素  
+        // s2.clear();
+        // console.log(s2);  
+
+        //for ..of 循环遍历
+          for( let v of s2){
+             console.log(v);
+          }
+    </script>
+</body>
+</html>

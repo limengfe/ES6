@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+
+    //flat 平
+    //将多维数组转化维低位数组
+    const arr = [1,2,3,[4,5]];
+    console.log(arr.flat());//12345
+
+    const arr1 = [1,[2,3,[4]]];
+    console.log(arr1.flat(2));//2表示深度，默认为1
+
+    //flatMap相当于将 flat和map结合 最终转化为一维数组  记得自己遍历时
+    const arr2 = [1,2,3];
+    const result =arr2.flatMap(item=>[item * 10]);
+    console.log(result);//10 20 30
+
+  </script>
+</body>
+</html>

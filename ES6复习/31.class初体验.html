@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // ES5实例化对象
+    function Phone(brand,price){
+      this.brand = brand;
+      this.price = price;
+    }
+    //添加方法，通过原型.call
+    Phone.prototype.call = function (){
+      console.log('我可以打电话')
+    }
+    //实例化对象
+    let apple = new Phone('苹果',2555);
+    console.log(apple);
+    apple.call();
+
+    //ES6使用类
+    class Sj {
+      //构造方法，名字不可以修改
+      constructor(brand,price){
+        this.brand = brand;
+        this.price = price;
+      }
+      //添加方法
+       call(){
+         console.log('我可以打电话')
+       }
+    }
+     let xm = new Sj('小米',1999);
+     console.log(xm);
+     xm.call();
+      
+  </script>
+</body>
+</html>
